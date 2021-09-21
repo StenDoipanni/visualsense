@@ -12,19 +12,17 @@ The final heuristic was then to focus on those Regions having at least two objec
 
 ## Frame Evocation Pipeline
 
-The final pipeline is composed by the following steps, and it’s available at ### put github ###
-
-From a Visual Genome image extract the list of relationships whose predicate is a verb.
-Extract the Region_ID and Region Description (of region having a verb as predicate).
-Generate the knowledge graph from natural language via FRED tool, taking as input each Region Description.
-Extract and store in a file all the frames evoked and all the synsets retrieved in each triple of the FRED graphs.
-Extract the WordNet synsets used in the json file as annotations (from the regions having as predicate a verb).
-Clean the WordNet synsets data extracted from Visual Genome json file, in order to have the iri of corresponding FramesterSyn entities, ready to be used to query Framester.
-Clean the WordNet synsets data extracted from FRED graphs, in order to have the iri of corresponding FramesterSyn entities, ready to be used to query Framester.
-Merge the two lists of synsets from FRED and Visual Genome json file.
-For each synset, launch a SPARQL query to Framester in order to retrieve all the evoked frames.
-Collect all the frames evoked keeping track of the amount of evocations of each frame.
-Produce the final json file showing name of the frame evoked, number of evocation occurrences and image ID.
+1. From a Visual Genome image extract the list of relationships whose predicate is a verb.
+1. Extract the Region_ID and Region Description (of region having a verb as predicate).
+1. Generate the knowledge graph from natural language via FRED tool, taking as input each Region Description.
+1. Extract and store in a file all the frames evoked and all the synsets retrieved in each triple of the FRED graphs.
+1. Extract the WordNet synsets used in the json file as annotations (from the regions having as predicate a verb).
+1. Clean the WordNet synsets data extracted from Visual Genome json file, in order to have the iri of corresponding FramesterSyn entities, ready to be used to query Framester.
+1. Clean the WordNet synsets data extracted from FRED graphs, in order to have the iri of corresponding FramesterSyn entities, ready to be used to query Framester.
+1. Merge the two lists of synsets from FRED and Visual Genome json file.
+1. For each synset, launch a SPARQL query to Framester in order to retrieve all the evoked frames.
+1. Collect all the frames evoked keeping track of the amount of evocations of each frame.
+1. Produce the final json file showing name of the frame evoked, number of evocation occurrences and image ID.
 
 
 This project was authored by Delfina S. M. Pandiani, Stefano De Giorgis, and Fiorela Ciroku.
